@@ -1,0 +1,31 @@
+// this is another(functional method) method of define Objects.
+
+var User = function(firstName, courseCount){
+    this.firstName = firstName;
+    this.courseCount = courseCount;
+    this.getCourseCount = function(){
+        console.log(`Course count is : ${this.courseCount}`);
+    };
+};
+// this is we injecting method in user object from out side . ->
+User.prototype.getFirstName = function(){
+    console.log(`your firstname is : ${this.firstName}`);
+}
+
+
+
+//"new" keyword create new object.->
+var Hitesh = new User("hitesh",2);
+//console.log(Hitesh);
+Hitesh.getCourseCount(); // <- as we created this var, this have all the access of objects .
+
+if (Hitesh.hasOwnProperty("firstName")){
+    Hitesh.getFirstName();
+} // this is we checking via browser that proto has assgined the property which we are asking or not? , we yes then give it .
+// vido link -> https://www.youtube.com/watch?v=ko5tv0tP6XA&list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD&index=41
+
+
+
+var sam = new User("sam", 3);
+//console.log(sam);
+sam.getCourseCount();
